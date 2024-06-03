@@ -1,0 +1,217 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-image: url("../img/background.png");
+    background-color: #1e2021;
+    background-repeat: no-repeat;
+    padding: 80px 15px 40px !important;
+}
+
+/* Start Modal */
+.modal {
+    max-width: 1159px;
+    border-radius: 50px;
+    background: #d9d9d933;
+    margin: auto;
+    padding: 50px;
+}
+
+.modal_title {
+    font-family: Roboto;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 46.88px;
+    color: #e0f465;
+    text-align: center;
+}
+
+.form_section {
+    margin-top: 70px;
+}
+
+.modal h3 {
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 28.13px;
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+
+.modal h3 > span {
+    font-family: Roboto;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 35.16px;
+    color: #e0f465;
+}
+
+.modal label {
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 28.13px;
+    margin-bottom: 10px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.modal textarea {
+    border: 2px solid #e0e0e0;
+    border-radius: 20px;
+    background-color: transparent;
+    width: 100%;
+    min-height: 250px;
+    padding: 20px;
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 28.13px;
+    color: #f0f0ec;
+    box-sizing: border-box;
+}
+
+.modal textarea::placeholder {
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 28.13px;
+    color: #848484;
+}
+
+.modal_btn {
+    border: 2px solid #e0f465;
+    border-radius: 120px;
+    padding: 12px 42px;
+    font-family: Roboto;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 35.16px;
+    color: #e0f465;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.modal_btn:disabled {
+    border: 2px solid #919c55;
+    color: #919c55;
+    background-color: transparent;
+    cursor: not-allowed;
+}
+
+[type="radio"]:checked,
+[type="radio"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+
+[type="radio"]:checked + label,
+[type="radio"]:not(:checked) + label {
+    position: relative;
+    padding-left: 28px;
+    cursor: pointer;
+    line-height: 20px;
+    display: inline-block;
+}
+
+[type="radio"]:checked + label:before,
+[type="radio"]:not(:checked) + label:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 14px;
+    height: 14px;
+    border: 3px solid #ddd;
+    transition: border-color 0.2s ease;
+}
+
+[type="radio"]:checked + label:before {
+    border-color: #e0f465;
+}
+
+[type="radio"]:checked + label:after,
+[type="radio"]:not(:checked) + label:after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background: #e0f465;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    transition: all 0.2s ease;
+}
+
+[type="radio"]:not(:checked) + label:after {
+    opacity: 0;
+    transform: scale(0);
+}
+
+[type="radio"]:checked + label:after {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* md - For medium devices */
+@media screen and (max-width: 768px) {
+    .modal_title {
+        font-size: 24px;
+        line-height: 25px;
+    }
+    .modal h3 {
+        font-size: 16px;
+        line-height: 20px;
+        margin-bottom: 15px;
+    }
+
+    .modal h3 > span {
+        font-size: 18px;
+        line-height: 25px;
+    }
+
+    .modal label {
+        font-size: 14px;
+    }
+
+    .form_section {
+        margin-top: 35px;
+    }
+
+    [type="radio"]:checked + label:before,
+    [type="radio"]:not(:checked) + label:before {
+        width: 13px;
+        height: 13px;
+        border: 2px solid #ddd;
+    }
+
+    [type="radio"]:checked + label:before {
+        border-color: #e0f465;
+    }
+
+    [type="radio"]:checked + label:after,
+    [type="radio"]:not(:checked) + label:after {
+        width: 9px;
+        height: 9px;
+        top: 4px;
+        left: 4px;
+    }
+
+    .modal_btn {
+        padding: 5px 25px;
+        font-size: 20px;
+    }
+}
+
+/* sm */
+@media screen and (max-width: 576px) {
+}
+
+/* xs - For small devices */
+@media screen and (max-width: 350px) {
+}
+
+/* End Modal */
