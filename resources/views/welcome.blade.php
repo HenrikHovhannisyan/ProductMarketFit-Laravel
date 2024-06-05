@@ -17,50 +17,43 @@
     <script src="{{ asset("/js/app.js") }}"></script>
 </head>
 <body class="antialiased">
-    <div class="modal">
+<div class="modal">
     <h2 class="modal_title">Tennis Enthusiast Survey</h2>
     <form action="">
         <div class="form_section">
             <h3>
-                <span>1.</span> How often do you play tennis in a typical week?
+                <span>1.</span> How would you feel if you could no longer use Serve Club?
             </h3>
 
             <div style="margin-bottom: 10px">
-                <input type="radio" id="daily" name="one" value="daily" required/>
-                <label for="daily">Daily</label>
+                <input type="radio" id="daily" name="one" value="very-disappointed" required/>
+                <label for="daily">Very disappointed</label>
             </div>
 
             <div style="margin-bottom: 10px">
-                <input type="radio" id="3-4" name="one" value="3-4" required/>
-                <label for="3-4">3-4 times a week</label>
+                <input type="radio" id="3-4" name="one" value="somewhat-disappointed" required/>
+                <label for="3-4">Somewhat disappointed</label>
             </div>
 
             <div style="margin-bottom: 10px">
-                <input type="radio" id="1-2" name="one" value="1-2" required/>
-                <label for="1-2">1-2 times a week</label>
+                <input type="radio" id="1-2" name="one" value="not-disappointed" required/>
+                <label for="1-2">Not disappointed</label>
             </div>
 
-            <input
-                type="radio"
-                id="week"
-                name="one"
-                value="Less than once a week"
-                required
-            />
-            <label for="week">Less than once a week</label>
+            <input type="radio" id="week" name="one" value="no-longer-use" required/>
+            <label for="week">No longer use</label>
         </div>
         <div class="form_section">
-            <h3><span>2.</span> Tell about your motivation for Playing Tennis</h3>
+            <h3><span>2.</span> What type of people do you think would most benefit from Serve Club?</h3>
             <textarea name="two" placeholder="Type... " required></textarea>
         </div>
         <div class="form_section">
-            <h3><span>3.</span> What is your favorite Tennis Brand and why?</h3>
+            <h3><span>3.</span> What is the main benefit you receive from Serve club?</h3>
             <textarea name="three" placeholder="Type... " required></textarea>
         </div>
         <div class="form_section">
             <h3>
-                <span>4.</span> If you participate in Tournaments, please tell about
-                experience.
+                <span>4.</span> How can we improve Serve Club for you?
             </h3>
             <textarea name="four" placeholder="Type... " required></textarea>
         </div>
