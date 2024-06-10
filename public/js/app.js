@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const submitButton = form.querySelector(".modal_btn");
 
     function validateForm() {
-        const radioGroup = form.querySelectorAll("input[name='one']");
+        const radioGroup = form.querySelectorAll("input[name='question_one']");
         let radioChecked = false;
         radioGroup.forEach((radio) => {
             if (radio.checked) {
@@ -24,4 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     form.addEventListener("change", validateForm);
     form.addEventListener("input", validateForm);
+
+    // Initial validation check
+    validateForm();
 });
