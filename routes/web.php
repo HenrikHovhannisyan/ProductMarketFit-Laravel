@@ -15,9 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('feedback');
-})->name('feedback');
+Route::get('/', function () {return view('feedback');})->name('feedback');
 Route::resource('feedback', FeedbackController::class);
 
 Auth::routes();

@@ -7,10 +7,21 @@ use Illuminate\Http\Request;
 
 class FeedbackController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $feedbacks = Feedback::all();
-        return view('welcome', compact('feedbacks'));
+        $query = Feedback::query();
+
+        if ($request->has('sport_type') && $request->sport_type != '') {
+            $query->where('sport_type', $request->sport_type);
+        }
+
+        if ($request->has('user_type') && $request->user_type != '') {
+            $query->where('user_type', $request->user_type);
+        }
+
+        $feedbacks = $query->get();
+
+        return view('home', compact('feedbacks'));
     }
 
     public function create()
@@ -21,18 +32,18 @@ class FeedbackController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'first_name' => 'required|string|max:255',
+            'last_name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255',
+            'sport_type' => 'required|string|max:255',
+            'user_type' => 'required|string|max:255',
             'question_one' => 'required|string',
             'question_two' => 'required|string',
             'question_three' => 'required|string',
             'question_four' => 'required|string',
         ]);
 
-        Feedback::create([
-            'question_one' => $request->question_one,
-            'question_two' => $request->question_two,
-            'question_three' => $request->question_three,
-            'question_four' => $request->question_four,
-        ]);
+        Feedback::create($request->all());
 
         return redirect()->route('feedback')->with('success', 'Feedback submitted successfully.');
     }
@@ -52,6 +63,11 @@ class FeedbackController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
+            'first_name' => 'required|string|max:255',
+            'last_name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255',
+            'sport_type' => 'required|string|max:255',
+            'user_type' => 'required|string|max:255',
             'question_one' => 'required|string',
             'question_two' => 'required|string',
             'question_three' => 'required|string',
@@ -59,12 +75,7 @@ class FeedbackController extends Controller
         ]);
 
         $feedback = Feedback::findOrFail($id);
-        $feedback->update([
-            'question_one' => $request->question_one,
-            'question_two' => $request->question_two,
-            'question_three' => $request->question_three,
-            'question_four' => $request->question_four,
-        ]);
+        $feedback->update($request->all());
 
         return redirect()->route('feedback.index')->with('success', 'Feedback updated successfully.');
     }

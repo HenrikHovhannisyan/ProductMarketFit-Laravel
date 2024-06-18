@@ -21,6 +21,41 @@
     <h2 class="modal_title">Tennis Enthusiast Survey</h2>
     <form action="{{ route('feedback.store') }}" method="POST">
         @csrf
+        <div class="input_box">
+            <div class="form_section">
+                <h3>First Name</h3>
+                <input name="first_name" placeholder="Type..." required>
+            </div>
+            <div class="form_section">
+                <h3>Last Name</h3>
+                <input name="last_name" placeholder="Type..." required>
+            </div>
+            <div class="form_section">
+                <h3>Email</h3>
+                <input name="email" placeholder="Type..." required>
+            </div>
+        </div>
+        <div class="input_box_1">
+            <div class="form_section">
+                <h3>Sport type</h3>
+                <select name="sport_type">
+                    <option value="tennis">Tennis</option>
+                    <option value="football">Football</option>
+                    <option value="golf">Golf</option>
+                </select>
+            </div>
+            <div class="form_section">
+                <h3>Type</h3>
+                <div style="margin-bottom: 10px">
+                    <input type="radio" id="player" name="user_type" value="player" required>
+                    <label for="player">Player</label>
+                </div>
+                <div style="margin-bottom: 10px">
+                    <input type="radio" id="trainer" name="user_type" value="trainer" required>
+                    <label for="trainer">Trainer</label>
+                </div>
+            </div>
+        </div>
         <div class="form_section">
             <h3><span>1.</span> How would you feel if you could no longer use Serve Club?</h3>
             <div style="margin-bottom: 10px">

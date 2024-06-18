@@ -15,6 +15,11 @@ class Feedback extends Model
      * @var array<int, string>
      */
     protected $fillable = [
+        'first_name',
+        'last_name',
+        'email',
+        'sport_type',
+        'user_type',
         'question_one',
         'question_two',
         'question_three',
