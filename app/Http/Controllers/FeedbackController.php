@@ -19,7 +19,7 @@ class FeedbackController extends Controller
             $query->where('user_type', $request->user_type);
         }
 
-        $feedbacks = $query->get();
+        $feedbacks = $query->paginate(10);
 
         return view('home', compact('feedbacks'));
     }
