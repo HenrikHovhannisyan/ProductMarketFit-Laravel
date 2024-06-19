@@ -57,3 +57,15 @@ document.addEventListener("DOMContentLoaded", function () {
     // Initial validation check
     validateForm();
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const alert = document.querySelector('.alert-success');
+    if (alert) {
+        setTimeout(() => {
+            alert.classList.add('close');
+        }, 5000);
+        setTimeout(() => {
+            alert.remove();
+        }, 5600);
+    }
+});

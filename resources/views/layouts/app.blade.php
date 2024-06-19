@@ -24,7 +24,7 @@
 <body  data-bs-theme="dark">
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
-            <div class="container">
+            <div class="container-fluid">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', '8186 - Product Market Fit') }}
                 </a>

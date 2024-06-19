@@ -17,6 +17,12 @@
     <script src="{{ asset("/js/app.js") }}"></script>
 </head>
 <body class="antialiased">
+@if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+
 <div class="modal">
     <h2 class="modal_title">Tennis Enthusiast Survey</h2>
     <form action="{{ route('feedback.store') }}" method="POST">
